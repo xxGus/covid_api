@@ -18,7 +18,7 @@ app.use(bodyParser.json());
 // Setup server port
 //var port = process.env.PORT || 8080;
 //var port = process.env.PORT || 3000;
-app.listen(process.env.PORT || 8080);
+app.listen(process.env.PORT || 3000);
 
 
 // Send message for default URL
