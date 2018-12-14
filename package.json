@@ -8,7 +8,7 @@
     "npm": "6.5.0"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",    
+    "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node app.js"
   },
   "keywords": [
@@ -19,8 +19,9 @@
   "author": "Victor Assis",
   "license": "ISC",
   "dependencies": {
+    "body-parser": "^1.18.3",
+    "cors": "^2.8.5",
     "express": "^4.16.4",
-    "request": "^2.83.0",
-    "body-parser": "^1.18.3"
+    "request": "^2.83.0"
   }
 }
