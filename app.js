@@ -17,8 +17,7 @@ app.use(bodyParser.json());
 
 // Setup server port
 //var port = process.env.PORT || 8080;
-//var port = process.env.PORT || 3000;
-app.listen(process.env.PORT || 3000);
+var port = process.env.PORT || 3000;
 
 
 // Send message for default URL
@@ -28,6 +27,6 @@ app.get('/', (req, res) => res.send('Hello World with Express'));
 app.use('/api', apiRoutes)
 
 // Launch app to listen to specified port
-/*app.listen(port, function () {
+app.listen(port, function () {
     console.log("Running RestHub on port " + port);
-});*/
+});
