@@ -19,10 +19,11 @@ app.use(bodyParser.json());
 //var port = process.env.PORT || 8080;
 var port = process.env.PORT || 3000;
 
+// Add headers
 app.use(function (req, res, next) {
 
     // Website you wish to allow to connect
-    res.setHeader('Access-Control-Allow-Origin', 'https://list-repositories.herokuapp.com');
+    res.setHeader('Access-Control-Allow-Origin', '*');
 
     // Request methods you wish to allow
     res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE');
@@ -37,7 +38,6 @@ app.use(function (req, res, next) {
     // Pass to next layer of middleware
     next();
 });
-
 
 // Send message for default URL
 app.get('/', (req, res) => res.send('Hello World with Express'));
