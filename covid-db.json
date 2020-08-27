@@ -6,11 +6,11 @@
     },
     {
       "regiao": "DRS II - Araçatuba",
-      "fase": "1"
+      "fase": "3"
     },
     {
       "regiao": "DRS III - Araraquara",
-      "fase": "2"
+      "fase": "3"
     },
     {
       "regiao": "DRS IV - Baixada Santista",
@@ -18,19 +18,19 @@
     },
     {
       "regiao": "DRS V - Barretos",
-      "fase": "2"
+      "fase": "3"
     },
     {
       "regiao": "DRS VI - Bauru",
-      "fase": "2"
+      "fase": "3"
     },
     {
       "regiao": "DRS VII - Campinas",
-      "fase": "1"
+      "fase": "3"
     },
     {
       "regiao": "DRS VIII - Franca",
-      "fase": "1"
+      "fase": "2"
     },
     {
       "regiao": "DRS IX - Marília",
@@ -38,7 +38,7 @@
     },
     {
       "regiao": "DRS X - Piracicaba",
-      "fase": "2"
+      "fase": "3"
     },
     {
       "regiao": "DRS XI - Presidente Prudente",
@@ -46,11 +46,11 @@
     },
     {
       "regiao": "DRS XII - Registro",
-      "fase": "3"
+      "fase": "2"
     },
     {
       "regiao": "DRS XIII - Ribeirão Preto",
-      "fase": "1"
+      "fase": "3"
     },
     {
       "regiao": "DRS XIV - São João da Boa Vista",
