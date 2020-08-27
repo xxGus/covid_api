@@ -1,20 +1,15 @@
-// Initialize express router
 let router = require('express').Router();
+var tokenController = require('./tokenController');
 
-// Set default API response
+
 router.get('/', function (req, res) {
     res.json({
         status: 'API Its Working',
-        message: 'Welcome to RESTHub crafted with love!',
+        message: 'Api Covid APP!',
     });
 });
 
-// Import token controller
-var tokenController = require('./tokenController');
+router.route('/images').get(tokenController.images);
+router.route('/data').get(tokenController.dataCovidSp);
 
-// Token routes
-router.route('/proxy/:code')
-    .get(tokenController.view);
-
-// Export API routes
 module.exports = router;

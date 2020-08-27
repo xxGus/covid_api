@@ -1,8 +1,5 @@
-// Import express
 let express = require('express');
-// Import Body parser
 let bodyParser = require('body-parser');
-// Initialize the app
 let app = express();
 
 // Import routes

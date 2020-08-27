@@ -1,24 +1,54 @@
-const request = require('request');
+const XMLHttpRequest = require("xmlhttprequest").XMLHttpRequest;
+const DomParser = require('dom-parser');
 
 // Handle index actions
-exports.view = function (req, res) {
-    request.post({
-        url:
-        'https://github.com/login/oauth/access_token?client_id=e27022ca24dac6b11943&client_secret=a4ca3a55d48b5c53515f363b73dabf48d87767fa&code=' + req.params.code
-    },
-    (error, response, body) => {
+exports.images = function (req, res) {
+    var xhr = new XMLHttpRequest();
+    var parser = new DomParser();
 
-        var hash;
-        var token = {};
-        var hashes = body.slice(body.indexOf('?') + 1).split('&');
+    xhr.open('GET', 'https://www.saopaulo.sp.gov.br/planosp/', false);
+    xhr.send();
 
-        for (var i = 0; i < hashes.length; i++) {
-            hash = hashes[i].split('=');
-            token[hash[0]] = hash[1];
+    var dom = parser.parseFromString(xhr.responseText,"text/html");
+    var classImgs = dom.getElementsByClassName("img-fases");
+
+    var imgs = []
+    
+    classImgs.forEach(element => {
+        var domClass = parser.parseFromString(element.innerHTML, "text/html");
+        imgs.push(domClass.getElementsByTagName("img")[0].attributes[0].value);
+    });
+    
+    res.json({
+        images: imgs
+    });
+};
+
+exports.dataCovidSp = function (req, res) {
+    var xhr = new XMLHttpRequest();
+    var parser = new DomParser();
+    
+    xhr.open('GET', 'https://raw.githubusercontent.com/seade-R/dados-covid-sp/master/data/dados_covid_sp.csv', false);
+    xhr.send();
+
+    var csv = parser.parseFromString(xhr.responseText,"text/html").rawHTML;
+
+    var lines = csv.split("\n");
+    var headers = lines[0].split(",");
+
+    var result = [];
+        
+    lines.forEach(line => {
+        var obj = {};
+        var currentline = line.split(",");
+
+        for(var j=0;j<headers.length;j++){
+            obj[headers[j]] = currentline[j];
         }
 
-        res.json({
-            token
-        });
+        result.push(obj);
+    });
+    res.json({
+        data: result
     });
 };
