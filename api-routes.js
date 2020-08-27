@@ -9,7 +9,8 @@ router.get('/', function (req, res) {
     });
 });
 
-router.route('/images').get(tokenController.images);
+// router.route('/images').get(tokenController.images);
 router.route('/data').get(tokenController.dataCovidSp);
+router.route('/leitos').get(tokenController.planoLeitosSp);
 
 module.exports = router;
